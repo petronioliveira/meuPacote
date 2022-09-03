@@ -1,10 +1,11 @@
 Package: meuPacote
 Type: Package
-Title: Histograma com curva normal sobreposta
+Title: Utilidades estatísticas
 Version: 0.1.0
 Author: Petronio Fagundes de Oliveira Filho
 Maintainer: <petronioliveira@gmail.com>
-Description: Construção de um histograma com curva normal sobreposta
+Description: Calcula dados estatísticos e desenha gráficos
 License: MIT License
 Encoding: UTF-8
 LazyData: true
+
