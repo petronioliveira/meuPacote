@@ -4,14 +4,14 @@
 \alias{plot_bp}
 \title{Função de teste t com boxplots}
 \usage{
-plot_bp(df, x_col, y_col)
+plot_bp(df, var.x, var.y)
 }
 \arguments{
 \item{df}{é um dataframe com os dados}
 
-\item{x_col}{é uma variável categórica dicotômica}
+\item{var.x}{é uma variável categórica dicotômica}
 
-\item{y_col}{é uma variável númerica}
+\item{var.y}{é uma variável númerica}
 }
 \description{
 Esta calcula um teste t e desenha os boxplots com o resultado do teste
