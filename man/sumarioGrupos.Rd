@@ -4,12 +4,12 @@
 \alias{sumarioGrupos}
 \title{Função que calcula resumo de vários grupos}
 \usage{
-sumarioGrupos(data = NULL, var.grupo = NULL, y = NULL)
+sumarioGrupos(dados = NULL, var.grupo = NULL, var.teste = NULL)
 }
 \arguments{
-\item{data}{é um dataframe com os dados}
-
 \item{var.grupo}{é uma variável categórica que define os grupos}
+
+\item{data}{é um dataframe com os dados}
 
 \item{y}{é a variável numérica que será resumida}
 }
