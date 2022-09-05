@@ -16,11 +16,12 @@
 #'
 #' leveneTest(altura ~ pop, center = mean, data = dados)
 #'
-#' plot_bp (df = dados, var.x = dados$pop, var.y = dados$pop)
+#' plot_bp (df = dados, var.x = pop, var.y = altura)
 #'
 #'@export
 plot_bp <- function(df, var.x, var.y){
   library(ggplot2)
+  library(ggpubr)
   ggplot(df, aes(x = {{var.x}}, y = {{var.y}}, fill = {{var.x}})) +
     geom_errorbar(stat = "boxplot", width = 0.1) +
     geom_boxplot() +

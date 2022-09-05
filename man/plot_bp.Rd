@@ -26,6 +26,6 @@ by (data = dados$altura, INDICES = dados$pop, FUN = shapiro.test)
 
 leveneTest(altura ~ pop, center = mean, data = dados)
 
-plot_bp (df = dados, var.x = dados$pop, var.y = dados$pop)
+plot_bp (df = dados, var.x = pop, var.y = altura)
 
 }
