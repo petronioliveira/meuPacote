@@ -17,3 +17,12 @@ plot_bpW(df, var.x, var.y)
 Esta calcula um teste de Wilcox para duas médias independentes e desenha os
 boxplots com o resultado do teste
 }
+\examples{
+
+cirurgia <- read_excel ("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosCirurgia.xlsx")
+
+cirurgia$infec <- as.factor(cirurgia$infec)
+
+plot_bpW(df = cirurgia, var.x = infec, var.y = tempohosp)
+
+}

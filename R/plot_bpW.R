@@ -7,7 +7,7 @@
 #'@param var.x é uma variável categórica dicotômica
 #'@param var.y é uma variável númerica
 #'
-#'@example
+#'@examples
 #'
 #'cirurgia <- read_excel ("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosCirurgia.xlsx")
 #'
