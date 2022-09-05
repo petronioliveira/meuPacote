@@ -9,10 +9,23 @@ plot_bp(df, var.x, var.y)
 \arguments{
 \item{df}{é um dataframe com os dados}
 
-\item{var.x}{é uma variável categórica dicotômica}
+\item{var.x}{é uma variável categórica dicotômica (fator)}
 
 \item{var.y}{é uma variável númerica}
 }
 \description{
 Esta calcula um teste t e desenha os boxplots com o resultado do teste
+}
+\examples{
+
+dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
+str(dados)
+dados$pop <- as.factor(dados$pop)
+
+by (data = dados$altura, INDICES = dados$pop, FUN = shapiro.test)
+
+leveneTest(altura ~ pop, center = mean, data = dados)
+
+plot_bp (df = dados, var.x = dados$pop, var.y = dados$pop)
+
 }

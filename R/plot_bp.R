@@ -3,12 +3,20 @@
 #'Esta calcula um teste t e desenha os boxplots com o resultado do teste
 #'
 #'@param df é um dataframe com os dados
-#'@param var.x é uma variável categórica dicotômica
+#'@param var.x é uma variável categórica dicotômica (fator)
 #'@param var.y é uma variável númerica
 #'
-#'@example
+#'@examples
 #'
-#'plot_bp (df, var.x, var.y)
+#' dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
+#' str(dados)
+#' dados$pop <- as.factor(dados$pop)
+#'
+#' by (data = dados$altura, INDICES = dados$pop, FUN = shapiro.test)
+#'
+#' leveneTest(altura ~ pop, center = mean, data = dados)
+#'
+#' plot_bp (df = dados, var.x = dados$pop, var.y = dados$pop)
 #'
 #'@export
 plot_bp <- function(df, var.x, var.y){
