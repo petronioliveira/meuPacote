@@ -9,7 +9,11 @@
 #'
 #'@example
 #'
-#'plot_bpW (df, var.x, var.y)
+#'cirurgia <- read_excel ("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosCirurgia.xlsx")
+#'
+#'cirurgia$infec <- as.factor(cirurgia$infec)
+#'
+#'plot_bpW(df = cirurgia, var.x = infec, var.y = tempohosp)
 #'
 #'@export
 plot_bpW <- function(df, var.x, var.y){
