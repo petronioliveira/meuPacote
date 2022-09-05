@@ -2,9 +2,15 @@
 #'
 #' Esta função calcula um resumo de vários grupos
 #'
-#' @param data é um dataframe com os dados
+#' @param dados é um dataframe com os dados
 #' @param var.grupo é uma variável categórica que define os grupos
-#' @param y é a variável numérica que será resumida
+#' @param var.teste é a variável numérica que será resumida
+#'
+#' @examples
+#' dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
+#' str(dados)
+#' dados$pop <- as.factor(dados$pop)
+#' sumarioGrupos(dados = dados, var.grupo = dados$pop, var.teste = dados$altura)
 #'
 #' @export
 sumarioGrupos <- function(dados = NULL, var.grupo = NULL, var.teste = NULL){

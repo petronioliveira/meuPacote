@@ -7,12 +7,19 @@
 sumarioGrupos(dados = NULL, var.grupo = NULL, var.teste = NULL)
 }
 \arguments{
+\item{dados}{é um dataframe com os dados}
+
 \item{var.grupo}{é uma variável categórica que define os grupos}
 
-\item{data}{é um dataframe com os dados}
-
-\item{y}{é a variável numérica que será resumida}
+\item{var.teste}{é a variável numérica que será resumida}
 }
 \description{
 Esta função calcula um resumo de vários grupos
+}
+\examples{
+dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
+str(dados)
+dados$pop <- as.factor(dados$pop)
+sumarioGrupos(dados = dados, var.grupo = dados$pop, var.teste = dados$altura)
+
 }
