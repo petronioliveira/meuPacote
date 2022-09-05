@@ -17,11 +17,11 @@ sumarioGrupos <- function(dados = NULL, var.grupo = NULL, var.teste = NULL){
       dados %>%
       group_by({{var.grupo}}) %>%
       summarise(n = n (),
-                media = mean(altura, na.rm = TRUE),
-                dp = sd (altura, na.rm = TRUE),
-                mediana = median (altura, na.rm = TRUE),
-                IIQ = IQR (altura, na.rm = TRUE),
-                ic = plotrix::std.error(altura, na.rm = TRUE)*qt(1 - (0.05/2), n - 1),
+                media = mean(var.teste, na.rm = TRUE),
+                dp = sd (var.teste, na.rm = TRUE),
+                mediana = median (var.teste, na.rm = TRUE),
+                IIQ = IQR (var.teste, na.rm = TRUE),
+                ic = plotrix::std.error(var.teste, na.rm = TRUE)*qt(1 - (0.05/2), n - 1),
                 linf = media - ic,
                 lsup = media + ic)
 }
