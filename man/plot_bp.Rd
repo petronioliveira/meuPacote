@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_bp.R
 \name{plot_bp}
 \alias{plot_bp}
-\title{Função de teste t com boxplots}
+\title{Função desenha boxplots com teste t de Student}
 \usage{
 plot_bp(df, var.x, var.y)
 }
@@ -14,7 +14,8 @@ plot_bp(df, var.x, var.y)
 \item{var.y}{é uma variável númerica}
 }
 \description{
-Esta calcula um teste t e desenha os boxplots com o resultado do teste
+Esta função desenha os boxplots comparando dois grupos independentes e mostra
+o resultado do teste t de Student
 }
 \examples{
 
@@ -28,4 +29,7 @@ leveneTest(altura ~ pop, center = mean, data = dados)
 
 plot_bp (df = dados, var.x = pop, var.y = altura)
 
+}
+\author{
+Petronio Fagundes de Oliveira Filho
 }

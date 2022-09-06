@@ -2,7 +2,7 @@
 % Please edit documentation in R/hist_normal.R
 \name{hist_normal}
 \alias{hist_normal}
-\title{Função de curva normal sobreposta ao histograma}
+\title{Função curva normal sobreposta ao histograma}
 \usage{
 hist_normal(dados = NULL, x = NULL, xlab = NULL, ylab = NULL)
 }
@@ -25,4 +25,7 @@ mater15 <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usand
 
 hist_normal(dados = mater15, x = mater15$pesoRN, ylab = "Peso ao nascer (g)", xlab = "Recém-nascidos")
 
+}
+\author{
+Petronio Fagundes de Oliveira Filho
 }

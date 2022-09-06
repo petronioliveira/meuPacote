@@ -1,6 +1,9 @@
-#'Função de teste t com boxplots
+#'Função desenha boxplots com teste t de Student
 #'
-#'Esta calcula um teste t e desenha os boxplots com o resultado do teste
+#'Esta função desenha os boxplots comparando dois grupos independentes e mostra
+#'o resultado do teste t de Student
+#'
+#'@author Petronio Fagundes de Oliveira Filho
 #'
 #'@param df é um dataframe com os dados
 #'@param var.x é uma variável categórica dicotômica (fator)

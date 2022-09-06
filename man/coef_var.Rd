@@ -10,10 +10,6 @@ coef_var(x)
 \item{x}{é um vetor numérico}
 }
 \description{
-Função criada por Marcos V C Vital, da Academia do R
-Criada em R 4.0.3
-}
-\details{
 Calcula o coeficiente de variação, expresso em porcentagem
 }
 \examples{
@@ -25,4 +21,7 @@ select (altura)
 
 coef_var (dados$altura)
 
+}
+\author{
+Marcos V C Vital, da Academia do R
 }

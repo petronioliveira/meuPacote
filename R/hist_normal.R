@@ -1,6 +1,8 @@
-#' Função de curva normal sobreposta ao histograma
+#' Função curva normal sobreposta ao histograma
 #'
 #' Esta função constroi um histograma e coloca uma curva normal sobreposta
+#'
+#' @author Petronio Fagundes de Oliveira Filho
 #'
 #' @param dados é um dataframe com os dados
 #' @param x é uma variável numérica base para o histograma

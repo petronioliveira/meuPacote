@@ -1,7 +1,9 @@
-#'Função que desenha boxplots comparando duas médias com teste de Wilcox
+#'Função desenha boxplots com teste de Wilcoxon (Mann-Whitney)
 #'
-#'Esta calcula um teste de Wilcox para duas médias independentes e desenha os
-#' boxplots com o resultado do teste
+#'Esta função desenha os boxplots comparando dois grupos independentes e mostra
+#'o resultado do teste de Wilcoxon
+#'
+#'@author Petronio Fagundes de Oliveira Filho
 #'
 #'@param df é um dataframe com os dados
 #'@param var.x é uma variável categórica dicotômica

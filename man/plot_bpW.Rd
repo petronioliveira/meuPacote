@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_bpW.R
 \name{plot_bpW}
 \alias{plot_bpW}
-\title{Função que desenha boxplots comparando duas médias com teste de Wilcox}
+\title{Função desenha boxplots com teste de Wilcoxon (Mann-Whitney)}
 \usage{
 plot_bpW(df, var.x, var.y)
 }
@@ -14,8 +14,8 @@ plot_bpW(df, var.x, var.y)
 \item{var.y}{é uma variável númerica}
 }
 \description{
-Esta calcula um teste de Wilcox para duas médias independentes e desenha os
-boxplots com o resultado do teste
+Esta função desenha os boxplots comparando dois grupos independentes e mostra
+o resultado do teste de Wilcoxon
 }
 \examples{
 
@@ -25,4 +25,7 @@ cirurgia$infec <- as.factor(cirurgia$infec)
 
 plot_bpW(df = cirurgia, var.x = infec, var.y = tempohosp)
 
+}
+\author{
+Petronio Fagundes de Oliveira Filho
 }

@@ -1,9 +1,8 @@
 #'Função Coeficiente de Variação
 #'
-#'Função criada por Marcos V C Vital, da Academia do R
-#'Criada em R 4.0.3
-#'
 #'Calcula o coeficiente de variação, expresso em porcentagem
+#'
+#'@author Marcos V C Vital, da Academia do R
 #'
 #'@param x é um vetor numérico
 
