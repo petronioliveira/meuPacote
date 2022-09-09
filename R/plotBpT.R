@@ -11,6 +11,7 @@
 #'
 #'@examples
 #'
+#' library (car)
 #' dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
 #' str(dados)
 #' dados$pop <- as.factor(dados$pop)
@@ -19,10 +20,10 @@
 #'
 #' leveneTest(altura ~ pop, center = mean, data = dados)
 #'
-#' plot_bp (df = dados, var.x = pop, var.y = altura)
+#' plotBpT (df = dados, var.x = pop, var.y = altura)
 #'
 #'@export
-plot_bp <- function(df, var.x, var.y){
+plotBpT <- function(df, var.x, var.y){
   library(ggplot2)
   library(ggpubr)
   ggplot(df, aes(x = {{var.x}}, y = {{var.y}}, fill = {{var.x}})) +

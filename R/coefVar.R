@@ -2,20 +2,18 @@
 #'
 #'Calcula o coeficiente de variação, expresso em porcentagem
 #'
-#'@author Marcos V C Vital, da Academia do R
+#'@author Petronio Fagundes de Oliveira Filho
 #'
 #'@param x é um vetor numérico
 
 #'@examples
 #'
-#'library (dplyr)
 #'library (readxl)
-#'dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx") %>%
-#'select (altura)
+#'dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
 #'
-#'coef_var (dados$altura)
+#'coefVar (dados$altura)
 #'
 #'@export
-coef_var <- function (x) {
+coefVar <- function (x) {
   (sd(x, na.rm=TRUE) / mean(x, na.rm=TRUE))*100
 }

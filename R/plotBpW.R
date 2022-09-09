@@ -15,10 +15,10 @@
 #'
 #'cirurgia$infec <- as.factor(cirurgia$infec)
 #'
-#'plot_bpW(df = cirurgia, var.x = infec, var.y = tempohosp)
+#'plotBpW(df = cirurgia, var.x = infec, var.y = tempohosp)
 #'
 #'@export
-plot_bpW <- function(df, var.x, var.y){
+plotBpW <- function(df, var.x, var.y){
   library(ggplot2)
   ggplot(df, aes(x = {{var.x}}, y = {{var.y}}, fill = {{var.x}})) +
     geom_errorbar(stat = "boxplot", width = 0.1) +
