@@ -24,7 +24,7 @@
 #' Usar a tabela no modelo
 #'
 #'@export
-RiscoRelativo <- function(tabela,alpha=0.05,referencerow=2)
+riscoRelativo <- function(tabela,alpha=0.05,referencerow=2)
 {
   numLinha <- nrow(tabela)
   nomeLinha <- rownames(tabela)

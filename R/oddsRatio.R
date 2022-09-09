@@ -26,7 +26,7 @@
 #' Usar a tabela no modelo
 #'
 #'@export
-OddsRatio <- function(tabela,alpha=0.05,referencerow=2,quiet=FALSE)
+oddsRatio <- function(tabela,alpha=0.05,referencerow=2,quiet=FALSE)
 {
   numLinha <- nrow(tabela)
   nomeLinha <- rownames(tabela)
