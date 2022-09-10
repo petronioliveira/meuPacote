@@ -27,10 +27,11 @@
 #'            dp = sd (pesoRN),
 #'            me = dp/sqrt(n) * qt(1 - (0.05/2), n - 1))
 #'
-#'barraErro (d = smoke1, y = "media", x = "fumo", erro = "me")
+#'erroBarra (d = smoke1, y = "media", x = "fumo", erro = "me") +
+#'           labs(x="Tabagismo", y="Peso ao nascer")
 #'
 #'@export
-barraErro <- function(d=NULL, x=NULL, y=NULL, erro=NULL){
+erroBarra <- function(d=NULL, x=NULL, y=NULL, erro=NULL){
 library(ggplot2)
 
 if(is.null(d)) stop("Informar dados")
@@ -50,7 +51,7 @@ ggplot(d, aes_string(x=x, y=y, group=1)) +
                     ymax=ls),
                 col='black', width =.2) +
   geom_col(col='brown', fill='brown', alpha=.5) +
-  theme_minimal()+
+  theme_classic()+
   labs(x=NULL,
        y=NULL)
 }
