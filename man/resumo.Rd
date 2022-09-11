@@ -12,9 +12,19 @@ resumo(x, lab)
 \item{lab}{é o rótulo da variável númerica, escrita entre aspas}
 }
 \description{
-Esta função calcula medias resumidoras (média, desvio padrão, mediana, P25 e
+Esta função calcula medidas resumidoras (média, desvio padrão, mediana, P25 e
 P75), entregando junto um histograma com curva normal sobreposta e boxplot de
 uma variável numérica
+}
+\examples{
+library (readxl)
+library (dplyr)
+
+dados <- read_excel ("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosMater.xlsx") \%>\%
+        select (altura)
+
+resumo(dados$altura, lab = "Altura (m)")
+
 }
 \author{
 Petronio Fagundes de Oliveira Filho
