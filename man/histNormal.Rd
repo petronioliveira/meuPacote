@@ -19,6 +19,8 @@ histNormal(dados = NULL, x = NULL, xlab = NULL, ylab = NULL)
 Esta função constroi um histograma e coloca uma curva normal sobreposta
 }
 \examples{
+library (readxl)
+library (dplyr)
 
 mater15 <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosMater15.xlsx") \%>\%
          select(pesoRN)

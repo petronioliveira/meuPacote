@@ -10,6 +10,8 @@
 #' @param ylab é o rótulo do eixo y
 #'
 #' @examples
+#' library (readxl)
+#' library (dplyr)
 #'
 #' mater15 <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosMater15.xlsx") %>%
 #'          select(pesoRN)
