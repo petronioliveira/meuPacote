@@ -10,25 +10,39 @@
 #'@param erro é a margem de erro usada, ver exemplo
 #'
 #'@examples
-#'library (readxl)
 #'library (dplyr)
-#'library (ggplot2)
+#'pesoRN <- c(3786, 3891, 2761, 2891, 3880, 2780, 3188, 3387,
+#'            3394, 3458, 3992, 2897, 3284, 3412, 3527, 2732,
+#'            3373, 3045, 2448, 3410, 3066, 2721, 2938, 3698,
+#'            3821, 3348, 3522, 2892, 3260, 3671, 2698, 3594,
+#'            1981, 3170, 2882, 3713, 3543, 4313, 2763, 2739,
+#'            3563, 3209, 2752, 3645, 2549, 3258, 2816, 3040,
+#'            2747, 2859, 2433, 3000, 3192, 2686, 1611, 3076,
+#'            3710, 2796, 3017, 2753)
+#'fumo <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+#'          2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+#'          3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+#'          4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
 #'
-#'smoke <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosFumo.xlsx")
+#'tabagismo <- data.frame (pesoRN, fumo)
 #'
-#'smoke$fumo <- factor(smoke$fumo,
-#'                     levels = c(1, 2, 3, 4),
-#'                     labels = c("não", "leve", "moderado", "pesado"))
+#'tabagismo$fumo <- factor(tabagismo$fumo,
+#'                         levels = c(1, 2, 3, 4),
+#'                         labels = c("Não", "Leve", "Moderado", "Pesado"))
 #'
-#'smoke1 <- smoke %>%
-#'dplyr::group_by(fumo) %>%
+#'smoke <- tabagismo %>%
+#'  group_by(fumo) %>%
 #'  summarise(n = n(),
 #'            media = mean(pesoRN),
 #'            dp = sd (pesoRN),
 #'            me = dp/sqrt(n) * qt(1 - (0.05/2), n - 1))
 #'
-#'erroBarra (d = smoke1, y = "media", x = "fumo", erro = "me") +
-#'           labs(x="Tabagismo", y="Peso ao nascer")
+#'erroBarra (d = smoke,
+#'           y = "media",
+#'           x = "fumo",
+#'           erro = "me") +
+#'  labs(x="Tabagismo",
+#'       y="Peso ao nascer (g)")
 #'
 #'@export
 erroBarra <- function(d=NULL, x=NULL, y=NULL, erro=NULL){

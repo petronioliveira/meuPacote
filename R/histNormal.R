@@ -10,13 +10,18 @@
 #' @param ylab é o rótulo do eixo y
 #'
 #' @examples
-#' library (readxl)
-#' library (dplyr)
+#' pesoRN <- c(3340, 3345, 3750, 3650, 3220, 4070, 3380, 3970,
+#'            3060, 3180, 2865, 2815, 3245, 2051, 2630)
+#' sexo <- c(2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2)
 #'
-#' mater15 <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosMater15.xlsx") %>%
-#'          select(pesoRN)
+#' neonato <- data.frame(pesoRN, sexo)
 #'
-#' histNormal(dados = mater15, x = mater15$pesoRN, ylab = "Peso ao nascer (g)", xlab = "Recém-nascidos")
+#' neonato$sexo <- as.factor(neonato$sexo)
+#'
+#' histNormal(dados = neonato,
+#'            x = neonato$pesoRN,
+#'            ylab = "Densidade de Probabilidade",
+#'            xlab = "Peso ao nascer (g)")
 #'
 #'@export
 histNormal <- function(dados=NULL, x=NULL, xlab = NULL, ylab = NULL){

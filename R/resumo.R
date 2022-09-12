@@ -10,13 +10,17 @@
 #' @param lab é o rótulo da variável númerica, escrita entre aspas
 #'
 #'@examples
-#'library (readxl)
-#'library (dplyr)
+#'# Peso de nascimento de 60 recém-nascidos:
+#'pesoRN <- c(3786, 3891, 2761, 2891, 3880, 2780, 3188, 3387,
+#'            3394, 3458, 3992, 2897, 3284, 3412, 3527, 2732,
+#'            3373, 3045, 2448, 3410, 3066, 2721, 2938, 3698,
+#'            3821, 3348, 3522, 2892, 3260, 3671, 2698, 3594,
+#'            1981, 3170, 2882, 3713, 3543, 4313, 2763, 2739,
+#'            3563, 3209, 2752, 3645, 2549, 3258, 2816, 3040,
+#'            2747, 2859, 2433, 3000, 3192, 2686, 1611, 3076,
+#'            3710, 2796, 3017, 2753)
 #'
-#'dados <- read_excel ("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosMater.xlsx") %>%
-#'         select (altura)
-#'
-#'resumo(dados$altura, lab = "Altura (m)")
+#'resumo(pesoRN, lab = "Peso ao nascer (g)")
 #'
 #'@export
 resumo <- function(x, lab) {

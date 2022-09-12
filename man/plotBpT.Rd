@@ -20,8 +20,19 @@ o resultado do teste t de Student
 \examples{
 
 library (car)
-dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
-str(dados)
+altura <- c(1.50, 1.56, 1.63, 1.66, 1.60, 1.65, 1.49, 1.60, 1.56, 1.58,
+            1.55, 1.66, 1.60, 1.56, 1.72, 1.65, 1.65, 1.57, 1.54, 1.55,
+            1.65, 1.73, 1.46, 1.59, 1.62, 1.65, 1.62, 1.60, 1.62, 1.65,
+            1.44, 1.39, 1.54, 1.36, 1.32, 1.39, 1.37, 1.40, 1.44, 1.44,
+            1.42, 1.35, 1.39, 1.34, 1.43, 1.34, 1.32, 1.61, 1.34, 1.30,
+            1.37, 1.24, 1.36, 1.44, 1.38, 1.49, 1.41, 1.29, 1.38, 1.42)
+
+pop <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)
+
+dados <- data.frame (altura, pop)
+
 dados$pop <- as.factor(dados$pop)
 
 by (data = dados$altura, INDICES = dados$pop, FUN = shapiro.test)

@@ -11,18 +11,19 @@
 #'
 #'@examples
 #'
-#' library (readxl)
-#' library (ggplot2)
-#' library (ggpubr)
+#'idade <- c(33, 24, 34, 35, 33, 25, 31, 28, 30, 34,
+#'           24, 30, 35, 27, 32, 19, 26, 26, 26, 36)
 #'
-#'# Dados de crianças até 36 meses idade
-#'dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosReg.xlsx")
+#'comp <-  c(98.0, 90.5, 97.5, 97.0, 96.0, 89.5, 97.0, 91.5, 92.0, 99.0,
+#'           90.0, 96.0, 100.0, 87.0, 93.5, 82.0, 92.0, 89.0, 87.5, 100.0)
+#'
+#'dados <-  data.frame(idade, comp)
 #'
 #'shapiro.test(dados$idade)
 #'shapiro.test(dados$comp)
 #'
 #'plotReg (df = dados, var_x = idade, var_y = comp) +
-#'         labs(x="Idade (meses)", y="Comprimento (cm)")
+#'  labs(x="Idade (meses)", y="Comprimento (cm)")
 #'
 #'@export
 plotReg <- function(df, var_x, var_y){

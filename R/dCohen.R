@@ -17,22 +17,19 @@
 #'
 #'@examples
 #'
-#'library (dplyr)
-#'library (readxl)
-#'dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
-#'dados$pop <- factor(dados$pop)
+#'altura1 <- c(1.50, 1.56, 1.63, 1.66, 1.60, 1.65, 1.49, 1.60, 1.56, 1.58,
+#'             1.55, 1.66, 1.60, 1.56, 1.72, 1.65, 1.65, 1.57, 1.54, 1.55,
+#'             1.65, 1.73, 1.46, 1.59, 1.62, 1.65, 1.62, 1.60, 1.62, 1.65)
+#'altura2 <- c(1.44, 1.39, 1.54, 1.36, 1.32, 1.39, 1.37, 1.40, 1.44, 1.44,
+#'             1.42, 1.35, 1.39, 1.34, 1.43, 1.34, 1.32, 1.61, 1.34, 1.30,
+#'             1.37, 1.24, 1.36, 1.44, 1.38, 1.49, 1.41, 1.29, 1.38, 1.42)
 #'
-#'media <- aggregate(dados$altura, list(dados$pop), FUN=mean)
-#'s <- aggregate(dados$altura, list(dados$pop), FUN=sd)
-#'n <- dados %>% count(pop, sort = TRUE)
-#'
-#'s1 <- s$x [1]
-#'s2 <- s$x [2]
-#'n1 <- n$n [1]
-#'n2 <- n$n [2]
-#'
-#'media1 <- media$x [1]
-#'media2 <- media$x [2]
+#'n1 <- length(altura1)
+#'n2 <- length (altura2)
+#'media1 <- mean(altura1)
+#'media2 <- mean(altura2)
+#'s1 <- sd(altura1)
+#'s2 <- sd(altura2)
 #'
 #'dCohen(n1, n2, media1, media2, s1, s2)
 #'

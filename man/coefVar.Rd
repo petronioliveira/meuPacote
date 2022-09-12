@@ -13,11 +13,16 @@ coefVar(x)
 Calcula o coeficiente de variação, expresso em porcentagem
 }
 \examples{
+pesoRN <- c(3340, 3345, 3750, 3650, 3220, 4070, 3380, 3970,
+           3060, 3180, 2865, 2815, 3245, 2051, 2630)
 
-library (readxl)
-dados <- read_excel("C:/Users/petro/Dropbox/Estatística/Bioestatística usando o R/dadosPop.xlsx")
+sexo <- c(2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 1, 1, 2)
 
-coefVar (dados$altura)
+neonato <- data.frame(pesoRN, sexo)
+
+neonato$sexo <- as.factor(neonato$sexo)
+
+coefVar (neonato$pesoRN)
 
 }
 \author{
