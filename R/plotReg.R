@@ -10,6 +10,8 @@
 #'@param var_y é uma variável desfecho (dependente) númerica
 #'
 #'@examples
+#'library (ggplot2)
+#'library (ggpubr)
 #'
 #'idade <- c(33, 24, 34, 35, 33, 25, 31, 28, 30, 34,
 #'           24, 30, 35, 27, 32, 19, 26, 26, 26, 36)
@@ -30,7 +32,9 @@ plotReg <- function(df, var_x, var_y){
   ggplot(df, aes(x = {{var_x}}, y = {{var_y}}, fill = {{var_x}})) +
     geom_point() +
     geom_smooth(method='lm', formula= y~x) +
-    stat_regline_equation () +
+    stat_regline_equation (aes(label = paste(..eq.label..,
+                                             ..rr.label..,
+                                             sep = '~~~'))) +
     theme_classic() +
     theme(legend.position = "none")
 }

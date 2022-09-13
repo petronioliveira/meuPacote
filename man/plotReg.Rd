@@ -18,6 +18,8 @@ Esta função desenha um gráfico de dispersão com reta de ajuste com IC95% e
 equação da reta
 }
 \examples{
+library (ggplot2)
+library (ggpubr)
 
 idade <- c(33, 24, 34, 35, 33, 25, 31, 28, 30, 34,
           24, 30, 35, 27, 32, 19, 26, 26, 26, 36)
