@@ -18,7 +18,7 @@ antes e nomeada como tabela}
 Esta função calcula o Risco Relativo a partir de uma tabela 2 x 2
 }
 \details{
-Basta criar uma tabela 2 x 2 para usar no modelo
+Basta criar uma tabela 2 x 2 para usar no modelo. Nomeia-a como quiser.
 }
 \author{
 Petronio Fagundes de Oliveira Filho

@@ -11,7 +11,7 @@
 #'
 #'@details
 #'
-#' Basta criar uma tabela 2 x 2 para usar no modelo.
+#' Basta criar uma tabela 2 x 2 para usar no modelo. Nomeia-a como quiser.
 #'
 #'
 #'@export

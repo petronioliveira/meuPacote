@@ -13,7 +13,7 @@
 #'
 #' @details
 #'
-#' Basta criar uma tabela 2 x 2 usar no modelo.
+#' Basta criar uma tabela 2 x 2 usar no modelo. Nomeia-a como quiser.
 #'
 #'@export
 oddsRatio <- function(tabela,alpha=0.05,referencerow=2,quiet=FALSE)
