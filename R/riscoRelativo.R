@@ -11,17 +11,8 @@
 #'
 #'@details
 #'
-#' Basta criar uma tabela 2 x 2 para calcular RR, usando o formato:
+#' Basta criar uma tabela 2 x 2 para usar no modelo.
 #'
-#' tabela <- matrix(c(valor1, valor2, valor3, valor4), nrow=2, byrow=TRUE)
-#'
-#' colnames(tabela) <- c("Doença","Sem doença")
-#'
-#' rownames(tabela) <- c("Exposto","Não exposto")
-#'
-#' print(tabela)
-#'
-#' Usar a tabela no modelo
 #'
 #'@export
 riscoRelativo <- function(tabela,alpha=0.05,referencerow=2)
