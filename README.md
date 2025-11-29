@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-O objetivo do meu `meuPacote` é calcular algumas estatísticas básicas a partir de dados do usuário. As estatísticas calculadas incluem:  
+O objetivo do meu `meuPacote` é calcular algumas estatísticas e gráficos a partir de dados do usuário. As estatísticas calculadas incluem:  
   - d de Cohen,   
   - odds ratio,   
   - risco relativo,     
