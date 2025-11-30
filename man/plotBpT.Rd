@@ -2,26 +2,16 @@
 % Please edit documentation in R/plotBpT.R
 \name{plotBpT}
 \alias{plotBpT}
-<<<<<<< HEAD
-<<<<<<< HEAD
 \title{Boxplots com Decisão Estatística Automática}
-=======
-\title{Função desenha boxplots com teste t de Student}
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
-=======
-\title{Função desenha boxplots com teste t de Student}
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 \usage{
 plotBpT(df, var.x, var.y)
 }
 \arguments{
-<<<<<<< HEAD
-<<<<<<< HEAD
 \item{df}{Dataframe com os dados.}
 
-\item{var.x}{Variável categórica dicotômica (fator) que define os grupos.}
+\item{var.x}{Variável categórica dicotômica (não citada) que define os grupos.}
 
-\item{var.y}{Variável numérica dependente.}
+\item{var.y}{Variável numérica dependente (não citada).}
 }
 \value{
 Um objeto ggplot com o boxplot e o resultado do teste estatístico.
@@ -34,50 +24,10 @@ nos pressupostos de normalidade (Shapiro-Wilk) e homogeneidade de variâncias (T
 \examples{
 # Criando dados de exemplo
 dados_normais <- data.frame(
-  grupo = rep(c("A", "B"), each = 30),
-  valor = c(rnorm(30, 10, 2), rnorm(30, 12, 2))
+   grupo = rep(c("A", "B"), each = 30),
+   valor = c(rnorm(30, 10, 2), rnorm(30, 12, 2))
 )
-plotBpT(dados_normais, var.x = grupo, var.y = valor)
-=======
-=======
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
-\item{df}{é um dataframe com os dados}
-
-\item{var.x}{é uma variável categórica dicotômica (fator)}
-
-\item{var.y}{é uma variável númerica}
-}
-\description{
-Esta função desenha os boxplots comparando dois grupos independentes e mostra
-o resultado do teste t de Student
-}
-\examples{
-
-library (car)
-altura <- c(1.50, 1.56, 1.63, 1.66, 1.60, 1.65, 1.49, 1.60, 1.56, 1.58,
-            1.55, 1.66, 1.60, 1.56, 1.72, 1.65, 1.65, 1.57, 1.54, 1.55,
-            1.65, 1.73, 1.46, 1.59, 1.62, 1.65, 1.62, 1.60, 1.62, 1.65,
-            1.44, 1.39, 1.54, 1.36, 1.32, 1.39, 1.37, 1.40, 1.44, 1.44,
-            1.42, 1.35, 1.39, 1.34, 1.43, 1.34, 1.32, 1.61, 1.34, 1.30,
-            1.37, 1.24, 1.36, 1.44, 1.38, 1.49, 1.41, 1.29, 1.38, 1.42)
-
-pop <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)
-
-dados <- data.frame (altura, pop)
-
-dados$pop <- as.factor(dados$pop)
-
-by (data = dados$altura, INDICES = dados$pop, FUN = shapiro.test)
-
-leveneTest(altura ~ pop, center = mean, data = dados)
-
-plotBpT (df = dados, var.x = pop, var.y = altura)
-<<<<<<< HEAD
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
-=======
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
+plotBpT(dados_normais, grupo, valor)
 
 }
 \author{

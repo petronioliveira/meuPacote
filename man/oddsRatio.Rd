@@ -21,12 +21,7 @@ suprimida. O padrão é FALSE}
 Esta função calcula a Odds Ratio a partir de uma tabela 2 x 2
 }
 \details{
-<<<<<<< HEAD
-<<<<<<< HEAD
 Basta criar uma tabela 2 x 2 usar no modelo. Nomeia-a como quiser.
-=======
-=======
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 Basta criar uma tabela 2 x 2 para calcular RR, usando o formato:
 
 tabela <- matrix(c(valor1, valor2, valor3, valor4), nrow=2, byrow=TRUE)
@@ -38,10 +33,6 @@ rownames(tabela) <- c("Exposto","Não exposto")
 print(tabela)
 
 Usar a tabela no modelo
-<<<<<<< HEAD
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
-=======
->>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 }
 \author{
 Petronio Fagundes de Oliveira Filho
