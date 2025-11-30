@@ -57,7 +57,11 @@ cor.std <- adjustcolor('brown', alpha.f = .3)
 fill.std <- adjustcolor('brown', alpha.f = .1)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 d$li <- d[[y]]
+=======
+d$li <- d[[y]]-d[[erro]]
+>>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 =======
 d$li <- d[[y]]-d[[erro]]
 >>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325

@@ -3,9 +3,12 @@
 .RData
 .Ruserdata
 <<<<<<< HEAD
+<<<<<<< HEAD
 .Rdata
 .httr-oauth
 .DS_Store
 .quarto
+=======
+>>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 =======
 >>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325

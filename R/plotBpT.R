@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #' Boxplots com Decisão Estatística Automática
 #'
 #' Esta função desenha boxplots comparando dois grupos e seleciona automaticamente
@@ -80,6 +81,8 @@ plotBpT <- function(df, var.x, var.y){
 
   return(p)
 =======
+=======
+>>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 #'Função desenha boxplots com teste t de Student
 #'
 #'Esta função desenha os boxplots comparando dois grupos independentes e mostra
@@ -125,5 +128,8 @@ plotBpT <- function(df, var.x, var.y){
     theme_classic() +
     theme(legend.position = "none") +
     stat_compare_means(method = "t.test", label.x = 0.5)
+<<<<<<< HEAD
+>>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
+=======
 >>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 }

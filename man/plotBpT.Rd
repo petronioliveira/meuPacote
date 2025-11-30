@@ -3,7 +3,11 @@
 \name{plotBpT}
 \alias{plotBpT}
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Boxplots com Decisão Estatística Automática}
+=======
+\title{Função desenha boxplots com teste t de Student}
+>>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 =======
 \title{Função desenha boxplots com teste t de Student}
 >>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
@@ -11,6 +15,7 @@
 plotBpT(df, var.x, var.y)
 }
 \arguments{
+<<<<<<< HEAD
 <<<<<<< HEAD
 \item{df}{Dataframe com os dados.}
 
@@ -34,6 +39,8 @@ dados_normais <- data.frame(
 )
 plotBpT(dados_normais, var.x = grupo, var.y = valor)
 =======
+=======
+>>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 \item{df}{é um dataframe com os dados}
 
 \item{var.x}{é uma variável categórica dicotômica (fator)}
@@ -67,6 +74,9 @@ by (data = dados$altura, INDICES = dados$pop, FUN = shapiro.test)
 leveneTest(altura ~ pop, center = mean, data = dados)
 
 plotBpT (df = dados, var.x = pop, var.y = altura)
+<<<<<<< HEAD
+>>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
+=======
 >>>>>>> dba9824e23d8686f7459f68f074895a0e40f2325
 
 }
