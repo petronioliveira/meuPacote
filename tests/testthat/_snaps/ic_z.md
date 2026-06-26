@@ -11,7 +11,7 @@
       ic_z("a", sigma = 2)
     Condition
       Error in `ic_z()`:
-      ! `x` deve ser um vetor numérico com pelo menos 1 elemento.
+      ! `x` deve ser um vetor numerico com pelo menos 1 elemento.
 
 ---
 
@@ -19,7 +19,7 @@
       ic_z(numeric(0), sigma = 2)
     Condition
       Error in `ic_z()`:
-      ! `x` deve ser um vetor numérico com pelo menos 1 elemento.
+      ! `x` deve ser um vetor numerico com pelo menos 1 elemento.
 
 # ic_z erro: sigma invalido
 
@@ -27,7 +27,7 @@
       ic_z(x, sigma = 0)
     Condition
       Error in `ic_z()`:
-      ! `sigma` deve ser um número positivo.
+      ! `sigma` deve ser um numero positivo.
 
 ---
 
@@ -35,7 +35,7 @@
       ic_z(x, sigma = -1)
     Condition
       Error in `ic_z()`:
-      ! `sigma` deve ser um número positivo.
+      ! `sigma` deve ser um numero positivo.
 
 ---
 
@@ -43,7 +43,7 @@
       ic_z(x, sigma = "dois")
     Condition
       Error in `ic_z()`:
-      ! `sigma` deve ser um número positivo.
+      ! `sigma` deve ser um numero positivo.
 
 # ic_z erro: conf_level invalido
 

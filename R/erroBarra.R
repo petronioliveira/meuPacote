@@ -52,7 +52,7 @@ erroBarra <- function(d = NULL, x = NULL, y = NULL, erro = NULL) {
   ggplot2::ggplot(d, ggplot2::aes(x = .data[[x]], y = .data[[y]], group = 1)) +
     ggplot2::geom_col(col = "brown", fill = "brown", alpha = 0.5) +
     ggplot2::geom_point() +
-    ggplot2::geom_errorbar(ggplot2::aes(ymin = li, ymax = ls),
+    ggplot2::geom_errorbar(ggplot2::aes(ymin = .data$li, ymax = .data$ls),
                            col = "black", width = 0.2) +
     ggplot2::theme_classic() +
     ggplot2::labs(x = NULL, y = NULL)

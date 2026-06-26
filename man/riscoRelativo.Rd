@@ -7,29 +7,23 @@
 riscoRelativo(tabela, alpha = 0.05, referencerow = 2)
 }
 \arguments{
-\item{tabela}{é uma tabela de tabulação cruzada. A tabela 2 x 2 deve ser criada
-antes e nomeada como tabela}
+\item{tabela}{Tabela de tabulação cruzada 2 x 2.}
 
-\item{alpha}{é o nível de significância, padrão é 0.05}
+\item{alpha}{Nível de significância (padrão: 0.05).}
 
-\item{referencerow}{é a linha da tabela que será a referência, o padrão é 2}
+\item{referencerow}{Linha de referência da tabela (padrão: 2).}
 }
 \description{
-Esta função calcula o Risco Relativo a partir de uma tabela 2 x 2
+Calcula o Risco Relativo a partir de uma tabela 2 x 2.
 }
 \details{
-Basta criar uma tabela 2 x 2 para usar no modelo. Nomeia-a como quiser.
-Basta criar uma tabela 2 x 2 para calcular RR, usando o formato:
+Crie a tabela 2 x 2 antes de usar a função:
 
-tabela <- matrix(c(valor1, valor2, valor3, valor4), nrow=2, byrow=TRUE)
+tabela <- matrix(c(valor1, valor2, valor3, valor4), nrow = 2, byrow = TRUE)
 
-colnames(tabela) <- c("Doença","Sem doença")
+colnames(tabela) <- c("Doenca", "Sem doenca")
 
-rownames(tabela) <- c("Exposto","Não exposto")
-
-print(tabela)
-
-Usar a tabela no modelo
+rownames(tabela) <- c("Exposto", "Nao exposto")
 }
 \author{
 Petronio Fagundes de Oliveira Filho

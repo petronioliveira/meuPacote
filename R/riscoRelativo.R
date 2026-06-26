@@ -1,70 +1,52 @@
 #' Função Risco Relativo
 #'
-#' Esta função calcula o Risco Relativo a partir de uma tabela 2 x 2
+#' Calcula o Risco Relativo a partir de uma tabela 2 x 2.
 #'
 #' @author Petronio Fagundes de Oliveira Filho
 #'
-#' @param tabela é uma tabela de tabulação cruzada. A tabela 2 x 2 deve ser criada
-#' antes e nomeada como tabela
-#' @param alpha é o nível de significância, padrão é 0.05
-#' @param referencerow é a linha da tabela que será a referência, o padrão é 2
+#' @param tabela Tabela de tabulação cruzada 2 x 2.
+#' @param alpha Nível de significância (padrão: 0.05).
+#' @param referencerow Linha de referência da tabela (padrão: 2).
 #'
-#'@details
-
-#' Basta criar uma tabela 2 x 2 para usar no modelo. Nomeia-a como quiser.
-
-#' Basta criar uma tabela 2 x 2 para calcular RR, usando o formato:
+#' @details
+#' Crie a tabela 2 x 2 antes de usar a função:
 #'
-#' tabela <- matrix(c(valor1, valor2, valor3, valor4), nrow=2, byrow=TRUE)
+#' tabela <- matrix(c(valor1, valor2, valor3, valor4), nrow = 2, byrow = TRUE)
 #'
-#' colnames(tabela) <- c("Doença","Sem doença")
+#' colnames(tabela) <- c("Doenca", "Sem doenca")
 #'
-#' rownames(tabela) <- c("Exposto","Não exposto")
+#' rownames(tabela) <- c("Exposto", "Nao exposto")
 #'
-#' print(tabela)
-#'
-#' Usar a tabela no modelo
+#' @importFrom stats qnorm
+#' @export
+riscoRelativo <- function(tabela, alpha = 0.05, referencerow = 2) {
+  num_linhas <- nrow(tabela)
 
-#'@export
-riscoRelativo <- function(tabela,alpha=0.05,referencerow=2)
-{
-  numLinha <- nrow(tabela)
-  nomeLinha <- rownames(tabela)
-  for (i in 1:numLinha)
-  {
-    rowname <- nomeLinha[i]
-    doença_NãoExposto <- tabela[referencerow,1]
-    controle_NãoExposto <- tabela[referencerow,2]
-    if (i != referencerow)
-    {
-      doença_Exposto <- tabela[i,1]
-      controle_Exposto <- tabela[i,2]
-      total_Exposto <- doença_Exposto + controle_Exposto
-      total_NãoExposto <- doença_NãoExposto + controle_NãoExposto
-      prob_doençaExposto <- doença_Exposto/total_Exposto
-      prob_doençaNãoExposto <- doença_NãoExposto/total_NãoExposto
-      prob_controleExposto <-  controle_Exposto/total_Exposto
-      prob_controleNãoExposto <- controle_NãoExposto/total_NãoExposto
+  for (i in 1:num_linhas) {
+    doenca_ref   <- tabela[referencerow, 1]
+    controle_ref <- tabela[referencerow, 2]
 
-      # calcular o risco relativo
-      RR <- round(prob_doençaExposto/prob_doençaNãoExposto, 2)
-      print(paste("RR = ",RR))
+    if (i != referencerow) {
+      doenca_exp   <- tabela[i, 1]
+      controle_exp <- tabela[i, 2]
 
-      oddsRatio <- round((prob_doençaExposto*prob_controleNãoExposto)/
-                           (prob_controleExposto*prob_doençaNãoExposto),2)
+      total_exp <- doenca_exp   + controle_exp
+      total_ref <- doenca_ref   + controle_ref
 
-      # calcular o intervalo de confiança
-      nivelConfiança <- (1 - alpha)*100
-      sigma <- sqrt((1/doença_Exposto) - (1/total_Exposto) +
-                      (1/doença_NãoExposto) - (1/total_NãoExposto))
+      prob_doenca_exp <- doenca_exp / total_exp
+      prob_doenca_ref <- doenca_ref / total_ref
 
-      # sigma é o erro padrão da estimativa do log de risco relativo
-      z <- qnorm(1-(alpha/2))
-      limInf <- round((RR * exp(-z * sigma)), 2)
-      limSup <- round((RR * exp( z * sigma)), 2)
-      print(paste("IC",nivelConfiança,
-                  "%  = [",limInf,",",limSup,"]"))
+      RR <- round(prob_doenca_exp / prob_doenca_ref, 2)
+      print(paste("RR = ", RR))
+
+      nivel_confianca <- (1 - alpha) * 100
+      ep_log_rr <- sqrt((1 / doenca_exp) - (1 / total_exp) +
+                          (1 / doenca_ref) - (1 / total_ref))
+      z       <- stats::qnorm(1 - (alpha / 2))
+      lim_inf <- round(RR * exp(-z * ep_log_rr), 2)
+      lim_sup <- round(RR * exp( z * ep_log_rr), 2)
+
+      print(paste("IC", nivel_confianca, "% = [", lim_inf, ",", lim_sup, "]"))
     }
   }
 }
-

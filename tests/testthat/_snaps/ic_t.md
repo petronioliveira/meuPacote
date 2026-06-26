@@ -11,7 +11,7 @@
       ic_t("a")
     Condition
       Error in `ic_t()`:
-      ! `x` deve ser um vetor numérico com pelo menos 2 elementos.
+      ! `x` deve ser um vetor numerico com pelo menos 2 elementos.
 
 ---
 
@@ -19,7 +19,7 @@
       ic_t(42)
     Condition
       Error in `ic_t()`:
-      ! `x` deve ser um vetor numérico com pelo menos 2 elementos.
+      ! `x` deve ser um vetor numerico com pelo menos 2 elementos.
 
 # ic_t erro: conf_level invalido
 

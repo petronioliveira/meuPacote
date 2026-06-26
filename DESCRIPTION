@@ -10,6 +10,8 @@ Description: Calcula medidas estatísticas (intervalos de confiança, tamanho
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.1.0)
 Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

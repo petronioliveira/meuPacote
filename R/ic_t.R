@@ -19,11 +19,12 @@
 #' ic_t(x, conf_level = 0.99)
 #'
 #' @importFrom glue glue
+#' @importFrom stats qt
 #' @importFrom tibble tibble
 #' @export
 ic_t <- function(x, conf_level = 0.95) {
   if (!is.numeric(x) || length(x) < 2)
-    stop("`x` deve ser um vetor numérico com pelo menos 2 elementos.")
+    stop("`x` deve ser um vetor numerico com pelo menos 2 elementos.")
   if (!is.numeric(conf_level) || conf_level <= 0 || conf_level >= 1)
     stop("`conf_level` deve estar entre 0 e 1 (exclusive).")
 

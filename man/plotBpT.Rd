@@ -9,25 +9,25 @@ plotBpT(df, var.x, var.y)
 \arguments{
 \item{df}{Dataframe com os dados.}
 
-\item{var.x}{Variável categórica dicotômica (não citada) que define os grupos.}
+\item{var.x}{Variável categórica dicotômica (sem aspas) que define os grupos.}
 
-\item{var.y}{Variável numérica dependente (não citada).}
+\item{var.y}{Variável numérica dependente (sem aspas).}
 }
 \value{
 Um objeto ggplot com o boxplot e o resultado do teste estatístico.
 }
 \description{
-Esta função desenha boxplots comparando dois grupos e seleciona automaticamente
-o teste estatístico adequado (t de Student, t de Welch ou Wilcoxon) baseando-se
-nos pressupostos de normalidade (Shapiro-Wilk) e homogeneidade de variâncias (Teste F).
+Desenha boxplots comparando dois grupos e seleciona automaticamente
+o teste estatístico adequado (t de Student, t de Welch ou Wilcoxon)
+com base nos pressupostos de normalidade (Shapiro-Wilk) e
+homogeneidade de variâncias (Teste F).
 }
 \examples{
-# Criando dados de exemplo
-dados_normais <- data.frame(
-   grupo = rep(c("A", "B"), each = 30),
-   valor = c(rnorm(30, 10, 2), rnorm(30, 12, 2))
+dados <- data.frame(
+  grupo = rep(c("A", "B"), each = 30),
+  valor = c(rnorm(30, 10, 2), rnorm(30, 12, 2))
 )
-plotBpT(dados_normais, grupo, valor)
+plotBpT(dados, grupo, valor)
 
 }
 \author{

@@ -19,13 +19,14 @@
 #' ic_z(x, sigma = 2, conf_level = 0.99)
 #'
 #' @importFrom glue glue
+#' @importFrom stats qnorm
 #' @importFrom tibble tibble
 #' @export
 ic_z <- function(x, sigma, conf_level = 0.95) {
   if (!is.numeric(x) || length(x) < 1)
-    stop("`x` deve ser um vetor numérico com pelo menos 1 elemento.")
+    stop("`x` deve ser um vetor numerico com pelo menos 1 elemento.")
   if (!is.numeric(sigma) || length(sigma) != 1 || sigma <= 0)
-    stop("`sigma` deve ser um número positivo.")
+    stop("`sigma` deve ser um numero positivo.")
   if (!is.numeric(conf_level) || conf_level <= 0 || conf_level >= 1)
     stop("`conf_level` deve estar entre 0 e 1 (exclusive).")
 

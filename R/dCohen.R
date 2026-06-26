@@ -40,7 +40,7 @@ d <- round(((media1 - media2)/sc), 1)
 print(d)
 if (d < 0.2) categ <- 'Insignificante'
 if ((d >= 0.2) & (d < 0.5)) categ <-  'Pequeno'
-if ((d >= 0.5) & (d < 0.8)) categ <- 'Médio'
+if ((d >= 0.5) & (d < 0.8)) categ <- 'Medio'
 if (d >= 0.8) categ <-  'Grande'
 return (categ)
 }
