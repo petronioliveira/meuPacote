@@ -11,7 +11,7 @@
 #' @param var.x Variável categórica dicotômica (sem aspas) que define os grupos.
 #' @param var.y Variável numérica dependente (sem aspas).
 #'
-#' @return Um objeto ggplot com o boxplot e o resultado do teste estatístico.
+#' @return Um objeto ggplot com o boxplot e o p-valor do teste selecionado.
 #'
 #' @examples
 #' dados <- data.frame(
@@ -21,13 +21,12 @@
 #' plotBpT(dados, grupo, valor)
 #'
 #' @importFrom dplyr pull
-#' @importFrom ggplot2 ggplot aes geom_boxplot theme_classic theme labs
-#' @importFrom ggpubr stat_compare_means
+#' @importFrom ggplot2 ggplot aes geom_boxplot annotate theme_classic theme labs
 #' @importFrom rlang enquos !!!  .data
-#' @importFrom stats shapiro.test var.test
+#' @importFrom stats shapiro.test t.test var.test wilcox.test
 #' @export
 plotBpT <- function(df, var.x, var.y) {
-  vars   <- rlang::enquos(var.x, var.y)
+  vars    <- rlang::enquos(var.x, var.y)
   vetor_x <- dplyr::pull(df, !!vars[[1]])
   vetor_y <- dplyr::pull(df, !!vars[[2]])
 
@@ -44,26 +43,27 @@ plotBpT <- function(df, var.x, var.y) {
   eh_normal <- all(p_shapiro > 0.05)
 
   # Homogeneidade de variancias (Teste F)
-  if (eh_normal) {
-    eh_homogeneo <- stats::var.test(vetor_y ~ vetor_x)$p.value > 0.05
+  eh_homogeneo <- if (eh_normal) {
+    stats::var.test(vetor_y ~ vetor_x)$p.value > 0.05
   } else {
-    eh_homogeneo <- FALSE
+    FALSE
   }
 
-  # Decisao do teste
+  # Executa o teste selecionado e extrai p-valor
   if (!eh_normal) {
-    metodo_teste <- "wilcox.test"
-    args_teste   <- list()
-    subtitulo    <- "Shapiro p<0.05 -> Teste Nao-Parametrico (Wilcoxon)"
+    resultado  <- stats::wilcox.test(vetor_y ~ vetor_x)
+    metodo_txt <- "Wilcoxon"
   } else if (!eh_homogeneo) {
-    metodo_teste <- "t.test"
-    args_teste   <- list(var.equal = FALSE)
-    subtitulo    <- "Var. Desiguais (p<0.05) -> Teste t de Welch"
+    resultado  <- stats::t.test(vetor_y ~ vetor_x, var.equal = FALSE)
+    metodo_txt <- "t de Welch"
   } else {
-    metodo_teste <- "t.test"
-    args_teste   <- list(var.equal = TRUE)
-    subtitulo    <- "Var. Homogeneas -> Teste t de Student"
+    resultado  <- stats::t.test(vetor_y ~ vetor_x, var.equal = TRUE)
+    metodo_txt <- "t de Student"
   }
+
+  p_val <- resultado$p.value
+  p_txt <- if (p_val < 0.001) "p < 0.001" else paste0("p = ", round(p_val, 3))
+  label <- paste0(metodo_txt, ": ", p_txt)
 
   ggplot2::ggplot(df, ggplot2::aes(
     x    = !!vars[[1]],
@@ -71,15 +71,16 @@ plotBpT <- function(df, var.x, var.y) {
     fill = !!vars[[1]]
   )) +
     ggplot2::geom_boxplot(alpha = 0.7) +
+    ggplot2::annotate(
+      "text",
+      x     = 1.5,
+      y     = max(vetor_y, na.rm = TRUE),
+      label = label,
+      size  = 4
+    ) +
     ggplot2::theme_classic() +
     ggplot2::theme(legend.position = "none") +
     ggplot2::labs(
-      title    = "Comparacao de Grupos com Decisao Estatistica",
-      subtitle = subtitulo
-    ) +
-    ggpubr::stat_compare_means(
-      method      = metodo_teste,
-      method.args = args_teste,
-      label.x.npc = "center"
+      subtitle = paste0("Teste: ", metodo_txt)
     )
 }

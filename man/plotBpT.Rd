@@ -14,7 +14,7 @@ plotBpT(df, var.x, var.y)
 \item{var.y}{Variável numérica dependente (sem aspas).}
 }
 \value{
-Um objeto ggplot com o boxplot e o resultado do teste estatístico.
+Um objeto ggplot com o boxplot e o p-valor do teste selecionado.
 }
 \description{
 Desenha boxplots comparando dois grupos e seleciona automaticamente
