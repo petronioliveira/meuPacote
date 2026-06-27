@@ -2,8 +2,8 @@
 
     Code
       ic_t(x)
-    Message
-      IC 95%: [47.8 ; 50.2]
+    Output
+      IC 95%: [47.8 ; 50.2] 
 
 # ic_t erro: x invalido ou muito curto
 

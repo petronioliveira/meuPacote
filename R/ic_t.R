@@ -45,11 +45,11 @@ ic_t <- function(x, conf_level = 0.95) {
     limite_superior = x_bar + me
   )
 
-  message(glue::glue(
+  cat(glue::glue(
     "IC {conf_level * 100}%: ",
     "[{sprintf('%.1f', resultado$limite_inferior)} ; ",
     "{sprintf('%.1f', resultado$limite_superior)}]"
-  ))
+  ), "\n")
 
   invisible(resultado)
 }

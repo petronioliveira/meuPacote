@@ -2,8 +2,8 @@
 
     Code
       ic_z(x, sigma = 2)
-    Message
-      IC 95%: [48.0 ; 50.0]
+    Output
+      IC 95%: [48.0 ; 50.0] 
 
 # ic_z erro: x invalido
 
